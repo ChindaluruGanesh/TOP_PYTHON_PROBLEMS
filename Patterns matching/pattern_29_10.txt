@@ -1,0 +1,168 @@
+n: 3
+A
+$ *
+B C D
+$ *
+E
+
+n = int(input('n: '))
+c = 0
+p = True
+for i in range(2*n-1):
+    if i < n:
+        for j in range(i+1):
+            if i % 2 == 0:
+                print(chr(65+c),end=' ')
+                c += 1
+                if c > 25:
+                    c = 0
+            else:
+                if p:
+                    print('$',end=' ')
+                    p = False
+                else:
+                    print('*',end=' ')
+                    p = True
+        for k in range(n-i-1):
+            print(' ',end=' ')
+    else:
+        for m in range(n - (i-n+1)):
+            if i % 2 == 1:
+                if p:
+                    print('$',end=' ')
+                    p = False
+                else:
+                    print('*',end=' ')
+                    p = True
+            else:
+                print(chr(65+c),end=' ')
+                c += 1
+                if c > 25:
+                    c = 0
+        for r in range(i-n+1):
+            print(' ',end=' ')
+    print()
+--------------------------------------------------------------------------------------
+N: 4
+1 A 3 A 5 A 7
+  B 9 B 1 B
+    3 C 5
+      D
+
+n = int(input('N: '))
+v = 1
+c = 0
+p = True
+for i in range(n):
+    for k in range(i):
+        print(' ',end=' ')
+    for j in range(2*(n-i)-1):
+        if p:
+            print(v,end=' ')
+            v += 2
+            if v > 9:
+                v = 1
+            p = False
+        else:
+            print(chr(65+c),end= ' ')
+            p = True
+    c += 1
+    print()
+-------------------------------------------------------------------------------------------------
+N : 4
+ A   1   B   3
+   C   5   D
+     7   E
+       9
+
+n = int(input('N : '))
+c = 0
+v = 1
+p = True
+for i in range(n):
+    for j in range(i):
+        print(' ',end=' ')
+    for k in range(n-i):
+        if p:
+            print(f' {chr(65+c)} ',end=' ')
+            c += 1
+            if c > 25:
+                c = 0
+            p = False
+        else:
+            print(f' {v} ',end=' ')
+            v += 2
+            if v > 9:
+                v = 1
+            p = True
+    print()
+-------------------------------------------------------------------------------------------
+N : 4
+A
+1 3
+B C D
+5 7 9 1
+E F G
+3 5
+H
+n = int(input('N : '))
+v = 1
+c = 0
+for i in range(2*n-1):
+    if i < n:
+        for j in range(i+1):
+            if i % 2 == 0:
+                print(chr(65+c),end=' ')
+                c += 1
+                if c > 25:
+                    c = 0
+            else:
+                print(v,end=' ')
+                v += 2
+                if v > 9:
+                    v = 1
+        for k in range(n-i-1):
+            print(' ',end=' ')
+    else:
+        for m in range(n-(i-n+1)):
+            if i % 2 == 1:
+                print(v,end=' ')
+                v += 2
+                if v > 9:
+                    v = 1
+            else:
+                print(chr(65+c),end=' ')
+                c += 1
+                if c > 25:
+                    c = 0
+    print()
+--------------------------------------------------------------------------------------------------
+n : 4
+      1
+    A 3 B
+  5 C 7 D 9
+E 1 F 3 G 5 H
+
+n = int(input('n : '))
+c = 0
+v = 1
+p = True
+for i in range(n):
+    for j in range(n-i-1):
+        print(' ',end=' ')
+    for k in range(2*i+1):
+        if p:
+            print(v,end=' ')
+            v += 2
+            if v > 9:
+                v = 1
+            p = False
+        else:
+            print(chr(65+c),end=' ')
+            c += 1
+            if c > 25:
+                c = 0
+            p = True
+    print() 
+-----------------------------------------------------------------------------
+
